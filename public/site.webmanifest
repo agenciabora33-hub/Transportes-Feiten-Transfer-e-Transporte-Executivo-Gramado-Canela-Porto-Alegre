@@ -1,0 +1,32 @@
+{
+  "name": "Transportes Feiten | Transfer e Transporte Executivo | Gramado, Canela, Porto Alegre",
+  "short_name": "Transportes Feiten",
+  "description": "Transfer Privativo e Transporte Executivo em Gramado, Canela e Serra Gaúcha. Especialista em transfer dos aeroportos de Porto Alegre (POA) e Caxias (CXJ) com frota executiva, pontualidade e segurança 5 estrelas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#0D0D0D",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "640x640",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
