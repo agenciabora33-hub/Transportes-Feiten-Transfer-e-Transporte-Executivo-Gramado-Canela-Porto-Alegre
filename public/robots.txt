@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://transportes-feiten-transfer-e-trans.vercel.app/sitemap.xml
