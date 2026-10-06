@@ -27,6 +27,8 @@ export const COMPANY_INFO = {
   instagramHandle: '@transportefeiten',
   instagramUrl: 'https://www.instagram.com/transportefeiten/',
   mapsUrl: 'https://maps.google.com/?q=Rua+Cezare+Vaccari+28+Canela+RS',
+  googleProfileUrl: 'https://profile.google.com/@example',
+  googleBadgePath: '/path/to/google-search-badge.svg',
 };
 
 export const KEY_DIFFERENTIATORS: DifferentiatorItem[] = [

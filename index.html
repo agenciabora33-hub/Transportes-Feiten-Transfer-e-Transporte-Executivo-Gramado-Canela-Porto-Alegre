@@ -178,7 +178,21 @@
     </script>
   </head>
   <body class="bg-[#0D0D0D] text-white antialiased selection:bg-[#BF953F]/30 selection:text-[#FCF6BA]">
-    <div id="root"></div>
+    <!-- Google Search Profile Badge -->
+    <noscript>
+      <a href="https://profile.google.com/@example"
+      aria-label="Find us on Google Search">
+      <img src="/path/to/google-search-badge.svg" alt="Google Search">
+      </a>
+    </noscript>
+
+    <div id="root">
+      <!-- Google Search Profile Badge Pre-render / SEO Fallback -->
+      <a href="https://profile.google.com/@example"
+      aria-label="Find us on Google Search">
+      <img src="/path/to/google-search-badge.svg" alt="Google Search">
+      </a>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

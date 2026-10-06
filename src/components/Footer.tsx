@@ -67,6 +67,28 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-4 h-4" />
               </a>
             </div>
+
+            {/* Google Search Profile Badge */}
+            <div className="mt-5 pt-4 border-t border-zinc-800/80 w-full max-w-sm">
+              <span className="block text-[11px] text-zinc-400 font-medium mb-2.5">
+                Perfil Oficial no Google:
+              </span>
+              <a
+                href="https://profile.google.com/@example"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Find us on Google Search"
+                className="inline-block transition-transform hover:scale-105 active:scale-95 duration-200"
+              >
+                <img
+                  src="/path/to/google-search-badge.svg"
+                  alt="Google Search"
+                  width={224}
+                  height={40}
+                  className="h-10 w-auto rounded-full shadow-md"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Col 2: Official NAP Block (3 cols) */}
