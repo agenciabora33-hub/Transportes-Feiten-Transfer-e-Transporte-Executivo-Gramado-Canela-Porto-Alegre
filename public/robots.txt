@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Directives for Microsoft Bing
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# Sitemap Index for Bing & Search Engines
 Sitemap: https://transportes-feiten-transfer-e-trans.vercel.app/sitemap.xml
