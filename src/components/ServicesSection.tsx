@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SERVICES_OFFERED } from '../data/transportesData';
 import { ServiceItem } from '../types';
+import { AppLink } from '../utils/router';
 import {
   Plane,
   Wine,
@@ -13,6 +14,7 @@ import {
   MessageCircle,
   Sparkles,
   ArrowRight,
+  FileText,
 } from 'lucide-react';
 
 interface ServicesSectionProps {
@@ -143,7 +145,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = () => {
                   </div>
                   <div>
                     <h3 className="font-display text-lg font-bold text-white group-hover:text-[#FCF6BA] transition-colors leading-snug">
-                      {service.title}
+                      <AppLink
+                        to={`/servicos/${service.slug}`}
+                        className="hover:underline decoration-[#D4AF37]/60 underline-offset-4"
+                      >
+                        {service.title}
+                      </AppLink>
                     </h3>
                   </div>
                 </div>
@@ -170,8 +177,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = () => {
               </div>
 
               {/* Meta information & CTA */}
-              <div className="pt-4 border-t border-zinc-800/80">
-                <div className="grid grid-cols-2 gap-2 text-[11px] text-zinc-400 mb-4 bg-[#0D0D0D]/60 p-2.5 rounded-xl border border-zinc-800/60">
+              <div className="pt-4 border-t border-zinc-800/80 space-y-2.5">
+                <div className="grid grid-cols-2 gap-2 text-[11px] text-zinc-400 mb-3 bg-[#0D0D0D]/60 p-2.5 rounded-xl border border-zinc-800/60">
                   <div className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
                     <span className="truncate">{service.duration}</span>
@@ -181,6 +188,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = () => {
                     <span className="truncate">{service.capacity}</span>
                   </div>
                 </div>
+
+                <AppLink
+                  to={`/servicos/${service.slug}`}
+                  id={`service-page-link-${service.id}`}
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 bg-[#0D0D0D] hover:bg-zinc-900 text-zinc-200 hover:text-[#FCF6BA] border border-zinc-800 hover:border-[#D4AF37]/50 transition-all"
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span>Ver Página Completa do Serviço</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </AppLink>
 
                 <a
                   href={getWhatsAppServiceLink(service.title)}

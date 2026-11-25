@@ -15,6 +15,7 @@ export interface TransferQuoteState {
 
 export interface ServiceItem {
   id: string;
+  slug: string;
   title: string;
   subtitle: string;
   description: string;
@@ -37,6 +38,7 @@ export interface DifferentiatorItem {
 
 export interface CoverageCity {
   id: string;
+  slug: string;
   name: string;
   type: 'base' | 'airport' | 'destination';
   distanceFromGramadoKm: number;
@@ -75,3 +77,42 @@ export interface PhotoItem {
   aspectRatio: 'landscape' | 'portrait' | 'square';
 }
 
+export interface ServicePageDetail {
+  id: string;
+  slug: string;
+  seoTitle: string;
+  seoDescription: string;
+  h1: string;
+  eyebrow: string;
+  lead: string;
+  searchIntents: string[];
+  overviewParagraphs: string[];
+  howItWorks: { step: string; title: string; detail: string }[];
+  includedFeatures: string[];
+  idealFor: string[];
+  relatedCitySlugs: string[];
+  faqs: { question: string; answer: string }[];
+  defaultOrigin: string;
+  defaultDestination: string;
+}
+
+export interface CityPageDetail {
+  id: string;
+  slug: string;
+  seoTitle: string;
+  seoDescription: string;
+  h1: string;
+  eyebrow: string;
+  lead: string;
+  searchIntentAnswers: {
+    intentQuestion: string;
+    badge: string;
+    answer: string;
+  }[];
+  boardingPoints: string[];
+  attractionsAndTips: string[];
+  recommendedServiceSlugs: string[];
+  faqs: { question: string; answer: string }[];
+  defaultOrigin: string;
+  defaultDestination: string;
+}

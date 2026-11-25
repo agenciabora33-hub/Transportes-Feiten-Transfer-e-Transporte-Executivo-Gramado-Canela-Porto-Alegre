@@ -11,5 +11,5 @@ Allow: /
 User-agent: BingPreview
 Allow: /
 
-# Sitemap Index for Bing & Search Engines
-Sitemap: https://transportes-feiten-transfer-e-trans.vercel.app/sitemap.xml
+# Sitemap Index for Bing & Google Search Engines
+Sitemap: https://www.transportesfeiten.com.br/sitemap.xml

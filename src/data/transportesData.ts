@@ -29,6 +29,7 @@ export const COMPANY_INFO = {
   mapsUrl: 'https://maps.google.com/?q=Rua+Cezare+Vaccari+28+Canela+RS',
   googleProfileUrl: 'https://profile.google.com/@example',
   googleBadgePath: '/path/to/google-search-badge.svg',
+  siteUrl: 'https://www.transportesfeiten.com.br',
 };
 
 export const KEY_DIFFERENTIATORS: DifferentiatorItem[] = [
@@ -93,6 +94,7 @@ export const KEY_DIFFERENTIATORS: DifferentiatorItem[] = [
 export const SERVICES_OFFERED: ServiceItem[] = [
   {
     id: 'transfer-aeroporto',
+    slug: 'transfer-aeroporto',
     title: 'Transfer Aeroporto (Chegada e Partida)',
     subtitle: 'Porto Alegre (POA) & Caxias do Sul (CXJ) ↔ Gramado & Canela',
     description:
@@ -111,6 +113,7 @@ export const SERVICES_OFFERED: ServiceItem[] = [
   },
   {
     id: 'tour-vinhedos',
+    slug: 'tour-vale-dos-vinhedos',
     title: 'Tour Vale dos Vinhedos Privativo',
     subtitle: 'Bento Gonçalves, Garibaldi & Monte Belo do Sul',
     description:
@@ -128,6 +131,7 @@ export const SERVICES_OFFERED: ServiceItem[] = [
   },
   {
     id: 'city-tour',
+    slug: 'city-tour-gramado-canela',
     title: 'City Tour Gramado & Canela Exclusivo',
     subtitle: 'Roteiro privativo sem a correria dos ônibus coletivos',
     description:
@@ -145,6 +149,7 @@ export const SERVICES_OFFERED: ServiceItem[] = [
   },
   {
     id: 'tour-canions',
+    slug: 'tour-canions-cambara-do-sul',
     title: 'Tour Cânions em Cambará do Sul',
     subtitle: 'Itaimbezinho & Fortaleza com condutor experiente',
     description:
@@ -162,6 +167,7 @@ export const SERVICES_OFFERED: ServiceItem[] = [
   },
   {
     id: 'transporte-eventos',
+    slug: 'transporte-eventos-casamentos',
     title: 'Transporte para Eventos & Casamentos',
     subtitle: 'Atendimento corporativo, congressos e casamentos de luxo',
     description:
@@ -182,6 +188,7 @@ export const SERVICES_OFFERED: ServiceItem[] = [
 export const COVERAGE_CITIES: CoverageCity[] = [
   {
     id: 'canela',
+    slug: 'canela',
     name: 'Canela',
     type: 'base',
     distanceFromGramadoKm: 7,
@@ -194,6 +201,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'gramado',
+    slug: 'gramado',
     name: 'Gramado',
     type: 'base',
     distanceFromGramadoKm: 0,
@@ -206,6 +214,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'porto-alegre',
+    slug: 'porto-alegre',
     name: 'Porto Alegre (POA)',
     type: 'airport',
     distanceFromGramadoKm: 118,
@@ -218,6 +227,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'caxias-do-sul',
+    slug: 'caxias-do-sul',
     name: 'Caxias do Sul (CXJ)',
     type: 'airport',
     distanceFromGramadoKm: 68,
@@ -230,6 +240,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'bento-goncalves',
+    slug: 'bento-goncalves',
     name: 'Bento Gonçalves',
     type: 'destination',
     distanceFromGramadoKm: 115,
@@ -242,6 +253,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'garibaldi',
+    slug: 'garibaldi',
     name: 'Garibaldi',
     type: 'destination',
     distanceFromGramadoKm: 102,
@@ -254,6 +266,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'nova-petropolis',
+    slug: 'nova-petropolis',
     name: 'Nova Petrópolis',
     type: 'destination',
     distanceFromGramadoKm: 34,
@@ -266,6 +279,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'cambara-do-sul',
+    slug: 'cambara-do-sul',
     name: 'Cambará do Sul',
     type: 'destination',
     distanceFromGramadoKm: 112,
@@ -278,6 +292,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'farroupilha',
+    slug: 'farroupilha',
     name: 'Farroupilha',
     type: 'destination',
     distanceFromGramadoKm: 85,
@@ -290,6 +305,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'carlos-barbosa',
+    slug: 'carlos-barbosa',
     name: 'Carlos Barbosa',
     type: 'destination',
     distanceFromGramadoKm: 95,
@@ -302,6 +318,7 @@ export const COVERAGE_CITIES: CoverageCity[] = [
   },
   {
     id: 'antonio-prado',
+    slug: 'antonio-prado',
     name: 'Antônio Prado',
     type: 'destination',
     distanceFromGramadoKm: 110,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TransferQuoteState } from '../types';
 import { buildWhatsAppQuoteUrl } from '../data/transportesData';
 import {
@@ -18,12 +18,17 @@ import {
 interface QuoteModalProps {
   isOpen: boolean;
   onClose: () => void;
+  preset?: {
+    origin?: string;
+    destination?: string;
+    notes?: string;
+  };
 }
 
-export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
+export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, preset }) => {
   const [form, setForm] = useState<TransferQuoteState>({
-    origin: 'Aeroporto de Porto Alegre (POA)',
-    destination: 'Gramado (Hotel / Pousada)',
+    origin: preset?.origin || 'Aeroporto de Porto Alegre (POA)',
+    destination: preset?.destination || 'Gramado (Centro / Hotéis)',
     date: '',
     time: '',
     passengers: 2,
@@ -33,12 +38,23 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
     roundTrip: true,
     returnDate: '',
     returnTime: '',
-    notes: '',
+    notes: preset?.notes || '',
   });
+
+  useEffect(() => {
+    if (isOpen && preset) {
+      setForm((prev) => ({
+        ...prev,
+        origin: preset.origin || prev.origin,
+        destination: preset.destination || prev.destination,
+        notes: preset.notes !== undefined ? preset.notes : prev.notes,
+      }));
+    }
+  }, [isOpen, preset]);
 
   if (!isOpen) return null;
 
-  const popularLocations = [
+  const baseLocations = [
     'Aeroporto de Porto Alegre (POA)',
     'Aeroporto de Caxias do Sul (CXJ)',
     'Gramado (Centro / Hotéis)',
@@ -47,7 +63,18 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
     'Garibaldi',
     'Nova Petrópolis',
     'Cambará do Sul (Cânions)',
+    'Farroupilha',
+    'Carlos Barbosa',
+    'Antônio Prado',
   ];
+
+  const popularLocations = Array.from(
+    new Set([
+      ...baseLocations,
+      ...(form.origin ? [form.origin] : []),
+      ...(form.destination ? [form.destination] : []),
+    ])
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

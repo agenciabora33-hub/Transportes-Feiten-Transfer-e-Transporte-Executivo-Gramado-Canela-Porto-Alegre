@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { COVERAGE_CITIES } from '../data/transportesData';
 import { CoverageCity } from '../types';
+import { AppLink } from '../utils/router';
 import {
   MapPin,
   Clock,
@@ -8,10 +9,12 @@ import {
   Navigation,
   Sparkles,
   ArrowUpRight,
+  ArrowRight,
   Plane,
   Building2,
   MountainSnow,
   MessageCircle,
+  FileText,
 } from 'lucide-react';
 
 export const CoverageMapSection: React.FC = () => {
@@ -322,8 +325,18 @@ export const CoverageMapSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Direct WhatsApp Route CTA */}
-            <div className="pt-4 border-t border-zinc-800">
+            {/* Direct WhatsApp Route CTA & Internal City Page Link */}
+            <div className="pt-4 border-t border-zinc-800 space-y-2.5">
+              <AppLink
+                to={`/cidades/${selectedCity.slug}`}
+                id="coverage-city-page-cta"
+                className="w-full py-3 px-4 rounded-xl bg-[#0D0D0D] hover:bg-zinc-900 text-[#FCF6BA] border border-[#D4AF37]/45 hover:border-[#D4AF37] font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"
+              >
+                <FileText className="w-4 h-4 text-[#D4AF37]" />
+                <span>Guia Completo: Transfer em {selectedCity.name}</span>
+                <ArrowRight className="w-4 h-4" />
+              </AppLink>
+
               <a
                 href={getWhatsAppRouteUrl(selectedCity)}
                 target="_blank"
@@ -341,6 +354,52 @@ export const CoverageMapSection: React.FC = () => {
               </p>
             </div>
 
+          </div>
+        </div>
+
+        {/* All 11 City Pages Directory (Direct Internal Links for Visitors & Search Crawlers) */}
+        <div className="mt-14 pt-10 border-t border-zinc-900">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                Páginas Exclusivas por Cidade Atendida
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+                Acesse o guia completo de rotas, tempos de deslocamento e respostas para cada destino:
+              </p>
+            </div>
+            <span className="text-xs text-[#FCF6BA] font-medium">
+              11 Destinos & Aeroportos
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+            {COVERAGE_CITIES.map((city) => (
+              <AppLink
+                key={city.id}
+                to={`/cidades/${city.slug}`}
+                id={`city-directory-link-${city.slug}`}
+                className="luxury-card rounded-xl p-4 bg-[#121215] flex items-center justify-between gap-3 group"
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    {getCityIcon(city.type)}
+                    <span className="font-display text-sm font-bold text-white group-hover:text-[#FCF6BA] transition-colors truncate">
+                      {city.name}
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-zinc-400 mt-1 truncate">
+                    {city.highlight}
+                  </div>
+                  <div className="text-[10px] text-[#D4AF37] font-semibold mt-1">
+                    {city.distanceFromGramadoKm === 0
+                      ? 'Destino Central'
+                      : `${city.distanceFromGramadoKm} km de Gramado`}
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-[#D4AF37] shrink-0 group-hover:translate-x-1 transition-transform" />
+              </AppLink>
+            ))}
           </div>
         </div>
 

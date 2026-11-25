@@ -1,14 +1,13 @@
 import React from 'react';
-import { COMPANY_INFO, COVERAGE_CITIES } from '../data/transportesData';
+import { COMPANY_INFO, COVERAGE_CITIES, SERVICES_OFFERED } from '../data/transportesData';
 import { BrandLogo } from './BrandLogo';
+import { AppLink } from '../utils/router';
 import {
   MapPin,
   Phone,
   Clock,
   Instagram,
   MessageCircle,
-  Shield,
-  Star,
   ExternalLink,
   ChevronRight,
 } from 'lucide-react';
@@ -26,7 +25,9 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Brand & Bio (4 cols) */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            <BrandLogo variant="horizontal" size="md" className="mb-4" />
+            <AppLink to="/" aria-label="Transportes Feiten Início">
+              <BrandLogo variant="horizontal" size="md" className="mb-4" />
+            </AppLink>
             
             <p className="text-xs text-zinc-400 leading-relaxed mb-5 max-w-sm">
               Especialista em transfer privativo executivo dos aeroportos de Porto Alegre (POA) e Caxias do Sul (CXJ)
@@ -143,64 +144,61 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 3: Quick Navigation Links (2 cols) */}
+          {/* Col 3: Services & Navigation Links (2 cols) */}
           <div className="lg:col-span-2">
             <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4 text-gold-gradient">
-              Navegação
+              Serviços
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-2 text-xs mb-5">
+              {SERVICES_OFFERED.map((srv) => (
+                <li key={srv.id}>
+                  <AppLink
+                    to={`/servicos/${srv.slug}`}
+                    className="hover:text-[#FCF6BA] transition-colors flex items-start gap-1"
+                  >
+                    <ChevronRight className="w-3 h-3 text-[#D4AF37] shrink-0 mt-0.5" />
+                    <span>{srv.title}</span>
+                  </AppLink>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="font-display text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2.5">
+              Acesso Rápido
+            </h4>
+            <ul className="space-y-1.5 text-xs">
               <li>
-                <a href="#diferenciais" className="hover:text-[#FCF6BA] transition-colors flex items-center gap-1">
-                  <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                  <span>Diferenciais</span>
-                </a>
+                <AppLink to="/#diferenciais" className="hover:text-[#FCF6BA] transition-colors">
+                  Diferenciais
+                </AppLink>
               </li>
               <li>
-                <a href="#galeria" className="hover:text-[#FCF6BA] transition-colors flex items-center gap-1">
-                  <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                  <span>Galeria de Fotos</span>
-                </a>
+                <AppLink to="/#avaliacoes" className="hover:text-[#FCF6BA] transition-colors">
+                  Avaliações no Google
+                </AppLink>
               </li>
               <li>
-                <a href="#servicos" className="hover:text-[#FCF6BA] transition-colors flex items-center gap-1">
-                  <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                  <span>Serviços & Tours</span>
-                </a>
-              </li>
-              <li>
-                <a href="#cobertura" className="hover:text-[#FCF6BA] transition-colors flex items-center gap-1">
-                  <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                  <span>Rotas Mapeadas</span>
-                </a>
-              </li>
-              <li>
-                <a href="#avaliacoes" className="hover:text-[#FCF6BA] transition-colors flex items-center gap-1">
-                  <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                  <span>Avaliações no Google</span>
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-[#FCF6BA] transition-colors flex items-center gap-1">
-                  <ChevronRight className="w-3 h-3 text-[#D4AF37]" />
-                  <span>Dúvidas Frequentes</span>
-                </a>
+                <AppLink to="/#faq" className="hover:text-[#FCF6BA] transition-colors">
+                  Dúvidas Frequentes
+                </AppLink>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: GEO Cities Indexed (3 cols) */}
+          {/* Col 4: GEO Cities Indexed with Internal Links (3 cols) */}
           <div className="lg:col-span-3">
             <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider mb-4 text-gold-gradient">
               Cidades Atendidas (GEO)
             </h4>
             <div className="flex flex-wrap gap-1.5">
               {COVERAGE_CITIES.map((c) => (
-                <span
+                <AppLink
                   key={c.id}
-                  className="px-2 py-1 rounded bg-zinc-900 border border-zinc-800 text-[11px] text-zinc-300"
+                  to={`/cidades/${c.slug}`}
+                  className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 hover:border-[#D4AF37]/60 text-[11px] text-zinc-300 hover:text-[#FCF6BA] transition-colors"
                 >
                   {c.name}
-                </span>
+                </AppLink>
               ))}
             </div>
             
