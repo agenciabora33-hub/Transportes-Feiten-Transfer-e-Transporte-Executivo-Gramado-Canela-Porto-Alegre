@@ -40,7 +40,7 @@ export const CoverageMapSection: React.FC = () => {
   return (
     <section
       id="cobertura"
-      className="py-16 sm:py-24 bg-[#0A0A0D] relative border-t border-zinc-900"
+      className="pt-[40px] pb-[40px] bg-[#0A0A0D] relative border-t border-zinc-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = () => {
   return (
     <section
       id="hero-section"
-      className="relative min-h-[90vh] pt-6 pb-16 lg:py-20 overflow-hidden bg-[#0D0D0D]"
+      className="relative min-h-[90vh] pt-[60px] pb-[40px] overflow-hidden bg-[#0D0D0D]"
     >
       {/* Ambient background glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(191,149,63,0.18),rgba(255,255,255,0))] pointer-events-none" />

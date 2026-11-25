@@ -20,7 +20,7 @@ export const KeyDifferentiators: React.FC = () => {
   return (
     <section
       id="diferenciais"
-      className="py-16 sm:py-24 bg-[#0A0A0C] relative border-t border-zinc-900 overflow-hidden"
+      className="pt-[50px] pb-[50px] pl-0 bg-[#0A0A0C] relative border-t border-zinc-900 overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-[radial-gradient(circle,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />

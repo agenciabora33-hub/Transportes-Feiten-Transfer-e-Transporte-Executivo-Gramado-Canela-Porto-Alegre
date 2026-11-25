@@ -64,7 +64,7 @@ export const PhotoGallerySection: React.FC = () => {
   return (
     <section
       id="galeria"
-      className="py-16 sm:py-24 bg-[#0A0A0C] relative border-t border-zinc-900 overflow-hidden"
+      className="pt-[40px] pb-[40px] bg-[#0A0A0C] relative border-t border-zinc-900 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

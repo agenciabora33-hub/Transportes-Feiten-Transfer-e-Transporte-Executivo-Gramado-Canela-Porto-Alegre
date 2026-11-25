@@ -10,7 +10,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-[#0A0A0C] relative border-t border-zinc-900">
+    <section id="faq" className="pt-[40px] pb-[40px] bg-[#0A0A0C] relative border-t border-zinc-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
